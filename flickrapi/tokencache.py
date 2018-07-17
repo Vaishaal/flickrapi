@@ -50,7 +50,7 @@ class TokenCache(object):
         self.api_key = api_key
         self.username = username
         self.memory = {}
-        self.path = path or os.path.expanduser(os.path.join("~", ".flickr"))
+        self.path = path or os.path.expanduser(os.path.join("/tmp/", ".flickr"))
 
     def get_cached_token_path(self):
         """Return the directory holding the app data."""
@@ -129,7 +129,7 @@ class OAuthTokenCache(object):
         self.api_key = api_key
         self.lookup_key = lookup_key
 
-        self.path = path or os.path.expanduser(os.path.join("~", ".flickr"))
+        self.path = path or os.path.expanduser(os.path.join("/tmp/", ".flickr"))
         self.filename = os.path.join(self.path, 'oauth-tokens.sqlite')
 
         if not os.path.exists(self.path):
